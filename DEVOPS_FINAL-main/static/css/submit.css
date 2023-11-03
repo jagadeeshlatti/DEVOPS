@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-image: linear-gradient(to right, rgb(12, 141, 184), rgb(176, 222, 238));
+    height: 15vh;
+}
+
+nav {
+    display: flex;
+}
+
+nav img {
+    height: 15vh;
+    padding: 0 3vh;
+}
+.headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    color: white;
+}
+
+.name h1 {
+    font-size: 5vh;
+}
+
+.options ul {
+    display: flex;
+}
+
+.options ul li {
+    list-style: none;
+    padding: 0 5vh 2vh 0;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.options ul li a:hover {
+    font-weight: bolder;
+}
+.textnodeco{
+    text-decoration: none;
+    color: black;
+}
+.hover:hover{
+    font-weight: bolder;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    width: 100vw;
+    height: 70vh;
+    /* background-color: aqua; */
+
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    width: 80vw;
+    height: 40vh;
+    /* background-color: aqua; */
+
+}
+.text p{
+    text-align: center;
+    color: black;
+    font-size: 6vh;
+}
+.logout button{
+        width:15vw;
+        height: 10vh;
+        background-image: linear-gradient(to right, #06ffb8,#0ebded);
+        color: black;
+        font-size: 3vh;
+        font-style: italic;
+    
+}
+footer {
+    /* background-color: rgb(20, 19, 19); */
+    background-image: linear-gradient(45deg,black,grey);
+    color: white;
+    height: 20vh;
+    text-align: center;
+}

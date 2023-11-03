@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Application Form</title>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static '/images/bms.png' %}" alt="bmslogo">
+            </div>
+            <div class="headings">
+                <div class="name">
+                    <h1>BMS College of Engineering</h1>
+                    <p>Bull Temple Rd, Basavanagudi, Bengaluru, Karnataka 560019</p>
+                </div>
+                <div class="options">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="https://bmsce.ac.in/home/About-BMSCE">About</a></li>
+                        <li><a href=https://bmsce.ac.in/home/Under-Graduation>Admissions</a></li>
+                        <li><a href="https://bmsce.ac.in/home/Contact-us">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="images">
+        <img src="{% static '/images/clg3.jpg' %}" alt="college">
+    </div>
+    <div class="intro">
+        <div class="news">
+            <h2>News</h2>
+            <ul>
+                <li>
+                    <a href="https://karresults.nic.in/" target="_parent">Cet results announced</a>
+                </li>
+                <li>
+                    <a href="#">Comedk Entries</a>
+                </li>
+                <li>
+                    <a href="#">Update on NEP policy</a>
+                </li>
+            </ul>
+            <p><a href="#">Previous Year results</a></p>
+        </div>
+        <div class="title">
+            <h1>BMS Entrance Examination</h1>
+            <h2>Online Application 2023</h2>
+        </div>
+        <div class="bms">
+            <h3>About Bmsce</h3>
+            <p>B.M.S College of Engineering is one of the top Engineering colleges with lucarative placements and career opportunities.</p>
+            <p class="know">To know more about courses offered and other details visit the main home page</p>
+            
+        </div>
+    </div>
+    <div class="info">
+        <h1>It all starts Here!</h1>
+        <p>BMS College of Engineering conducts the Examination every year for admission in various B.E/B.TECH courses. Apply now and be a part of one of the Top Engineering colleges in Karnataka. Start your learning at BMSCE.</p>
+        <div class="eng">
+            <img src="{% static '/images/eng1.jpg' %}" alt="">
+            <img src="{% static '/images/eng2.jpg' %}" alt="">
+            <img src="{% static '/images/eng3.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="guide">
+          <h1>STEPS TO FILL APPLICATION</h1>
+    </div>
+    <div class="steps">
+        <div class="step">
+            <div class="ph">
+                  <img src="{% static '/images/step1.png' %}" alt="">
+            </div>
+            <div class="text">
+                <h2>STEP 1</h2>
+                <p>Sign up(Register)</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="ph">
+                  <img src="{% static '/images/step2.jpg' %}" alt="">
+            </div>
+            <div class="text">
+                <h2>STEP 2</h2>
+                <p>Verify your Email</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="ph">
+                  <img src="{% static '/images/step3.jpeg' %}" alt="">
+            </div>
+            <div class="text">
+                <h2>STEP 3</h2>
+                <p>Fill up your Application</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="ph">
+                  <img src="{% static '/images/step4.png' %}" alt="">
+            </div>
+            <div class="text">
+                <h2>STEP 4</h2>
+                <p>Upload the documents</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="ph">
+                  <img src="{% static '/images/step5.png' %}" alt="">
+            </div>
+            <div class="text">
+                <h2>STEP 5</h2>
+                <p>Submit your Application</p>
+            </div>
+        </div>
+    </div>
+    <div class="login">
+        <button><a href="{% url 'auth_page' %}" target="_blank">SIGN IN TO FILL YOUR APPLICATION</a></button>
+    </div>
+    <footer>
+        <div>
+            <div class="cu" id="footer">
+                <h2>Contact us at bmsce</h2>
+                <h1>+91-80-26622130-35</h1>
+        </div>
+        <div class="email">
+            <h2>Email:<a href="mailto:info@bmsce.ac.in">info@bmsce.ac.in</a></h2>    
+        </div>
+        <h2>Coprights &copy;2022 Bms college of Engineering.All rights reserved</h2>
+    </div>
+    </footer>
+</body>
+
+</html>

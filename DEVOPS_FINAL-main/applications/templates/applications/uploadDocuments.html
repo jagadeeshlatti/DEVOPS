@@ -1,0 +1,249 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents</title>
+    <style>
+*{
+    margin:0;
+    padding: 0;
+}
+header {
+    background-image: linear-gradient(45deg, rgb(12, 141, 184), rgb(176, 222, 238));
+    height: 15vh;
+}
+
+nav {
+    display: flex;
+}
+
+nav img {
+    height: 15vh;
+    padding: 0 3vh;
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    color: white;
+}
+
+.name h1 {
+    font-size: 5vh;
+}
+
+.options ul {
+    display: flex;
+}
+
+.options ul li {
+    list-style: none;
+    padding: 0 5vh 2vh 0;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.options ul li a:hover {
+    font-weight: bolder;
+}
+.textnodeco{
+    text-decoration: none;
+    color: black;
+}
+.profile{
+    display: flex;
+    /* justify-content: space-between; */
+    width: 98.8vw;
+    background-image: url(exam.jpg);
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin-top: 3vh;
+}
+.box1{
+    background-image: linear-gradient(to top, #06ffb8,#0ebded);
+    color: black;
+    width: 15vw;
+    height: 40vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+}
+
+.box1 ul li{
+    margin-left:5vh;
+    padding: 1vh;
+    vertical-align: auto;
+    font-size: 2vh;
+}
+.headin{
+      display: flex;
+      margin: 3vh 0 0 2vh;
+      font-size: 4vh;
+      font-style: italic;
+      font-weight: lighter;
+      color: black;
+      padding: 1vw;
+      padding-top:4vh;
+}
+        
+        
+h1{
+    text-align: center;
+}
+.doc{
+    width: 80vw;
+    height: 15vh;
+    margin: 4vh;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: row; */
+    border: 4px solid rgb(40, 192, 243);
+    align-items: center;
+    padding-left: 2vw;
+    background-image: linear-gradient(to right,lightgreen,lightblue);
+}
+.doc h1{
+    font-size: 6vh;
+    color:black;
+}
+.save{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4vh;
+}
+button{
+    width:10vw;
+    height: 10vh;
+    background-image: linear-gradient(to right,lightgreen,lightblue);
+    color:black;
+    font-size: 3vh;
+    font-style: italic;
+}
+.submit{
+    width:10vw;
+    height: 10vh;
+    background-image: linear-gradient(to right,lightgreen,lightblue);
+    color:black;
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.hover:hover{
+    font-weight: bolder;
+}
+footer {
+    /* background-color: rgb(20, 19, 19); */
+    background-image: linear-gradient(45deg,black,grey);
+    color: white;
+    height: 20vh;
+    text-align: center;
+}
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static '/images/bms.png' %}" alt="bmslogo">
+            </div>
+            <div class="headings">
+                <div class="name">
+                    <h1>BMS College of Engineering</h1>
+                    <p>Bull Temple Rd, Basavanagudi, Bengaluru, Karnataka 560019</p>
+                </div>
+                <div class="options">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="https://bmsce.ac.in/home/About-BMSCE">About Us</a></li>
+                        <li><a href=https://bmsce.ac.in/home/Under-Graduation>Admissions</a></li>
+                        <li><a href="https://bmsce.ac.in/home/Contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="profile">
+        <div class="box1">
+            <h3 class="textcentre">Steps to complete your Application</h3>
+            <ul>
+                <li>
+                    <ul>
+                        Application form
+                        <li>Personal details </li>
+                        <li> Educational details</li>
+                        <li>Financial details</li>
+                    </ul>
+                </li>
+                <li>Upload Documents</li>
+                <li class="hover"><a class="textnodeco " href="edit.html">Edit Application form</a></li>
+            </ul>
+        </div>
+        <div class="headin">
+            <h1>Application for BMSCE ENTRANCE EXAM 2022</h1>
+        </div>
+    </div>
+    <h1>
+        UPLOAD YOUR DOCUMENTS HERE
+    </h1>
+    <form action="{% url 'upload_documents_page' %}"  method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <div class="doc">
+            <h1>Passport size photo</h1>
+            <input type="file" name="uploadimage" accept="image/*" required>
+        </div>
+        <div class="doc">
+            <h1>10<sup>th</sup> marks card</h1>
+            <input type="file" name="up10thmarkscard" accept=".jpg,.jpeg ,.pdf">
+        </div>
+        <div class="doc">
+            <h1>12<sup>th</sup> marks card</h1>
+            <input type="file" name="up12thmarkscard" accept=".jpg,.jpeg ,.pdf">
+        </div>
+        <div class="doc">
+            <h1>Income Caste certificate</h1>
+            <input type="file" name="upIncomecaste" accept=".jpg,.jpeg ,.pdf">
+        </div>
+        <div class="doc">
+            <h1>12th study certificate</h1>
+            <input type="file" name="up12thstudycertificate" accept=".jpg,.jpeg ,.pdf">
+        </div>
+        <div class="save">
+            <button type="submit" class="hover" class="textnodeco" onclick='confirm("Are you sure you want to submit the applicationForm")'>SUBMIT</button>
+        </div>
+    </form>
+<footer>
+    <div>
+        <div class="cu" id="footer">
+            <h2>Contact us</h2>
+            <h1>+91-80-26622130-35</h1>
+    </div>
+    <div class="email">
+        <h2>Email:<a href="mailto:info@bmsce.ac.in">info@bmsce.ac.in</a></h2>    
+    </div>
+    <h2>Coprights &copy;2022 Bms college of Engineering.All rights reserved</h2>
+</div>
+</footer>
+<script>
+    function save(){
+        if (confirm("You want to save the form as draft and return to application page")){
+                 window.location.href="edit.html";
+            }
+            else{
+                alert("save denied")
+            }
+    }
+</script>
+</body>
+</html>

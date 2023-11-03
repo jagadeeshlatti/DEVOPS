@@ -1,0 +1,221 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header {
+    background-image: linear-gradient(45deg, rgb(12, 141, 184), rgb(176, 222, 238));
+    height: 15vh;
+}
+
+nav {
+    display: flex;
+}
+
+nav img {
+    height: 15vh;
+    padding: 0 3vh;
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    color: white;
+}
+
+.name h1 {
+    font-size: 5vh;
+}
+
+.options ul {
+    display: flex;
+}
+
+.options ul li {
+    list-style: none;
+    padding: 0 5vh 2vh 0;
+}
+
+.options ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.options ul li a:hover {
+    font-weight: bolder;
+}
+
+.images {
+    height: 50vh;
+    border: 1.5vh solid white;
+    display: flex;
+}
+
+.images img { 
+    height: 50vh;
+    width: 98vw;
+}
+.intro {
+    display: flex;
+    background-color:white;
+    height: 40vh;
+}
+
+.news {
+    background-color: rgb(56, 187, 231);
+    color: white;
+    height: 40vh;
+    width: 18vw;
+    border-top: 1.5vh solid white;
+    border-left: 2vw solid white;
+
+}
+
+.news h2 {
+    font-size: 4vh;
+    padding: 0 1vw;
+}
+
+.news li {
+    margin: 1vh 0;
+    list-style: none;
+    text-align: center;
+}
+.news li a{
+   color: white;
+   text-decoration: none;
+   font-size: 3vh;
+}
+.news li a:hover{
+   font-weight: bolder;
+}
+.news p a{
+    color: white;
+    font-size: 3.5vh;
+    text-decoration: none;
+    padding:0 1vw;
+}
+.title {
+    background-color: white;
+    height: 40vh;
+    width: 60vw;
+    color: rgb(14, 107, 138);
+    border-top: 1.5vh solid white;
+}
+
+.title h1 {
+    font-size: 4vw;
+    padding: 3vh 5vh;
+
+}
+
+.title h2 {
+    padding: 7vh 5vh 0 5vh;
+    font-size: 3vw;
+}
+
+.bms {
+    background-color: rgb(56, 187, 231);
+    color: white;
+    height: 40vh;
+    width: 18vw;
+    border-top: 1.5vh solid white;
+    border-right: 2vw solid white;
+}
+.bms h3{
+    text-align: center;
+    font-size: 1.5vw;
+}
+.bms p{
+    padding-left: 1vw;
+    font-size: 3vh;
+    font-style: italic;
+}
+.bms a{
+    padding: 1vw;
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+}
+.bms a:hover{
+    font-weight: bolder;
+}
+.info h1{
+    font-size: 7vh;
+    font-style: oblique;
+    color: rgb(14, 107, 138);
+    text-align: center;
+    text-shadow: 5px;
+}
+.info p{
+    font-size: 3.5vh;
+    color: black;
+    text-align: start;
+    padding: 1vh;
+}
+.eng{
+    display: flex;
+    justify-content: space-evenly;
+}
+.eng img{
+    width: 30vw;
+}
+.guide h1{
+    margin: 3vh 0;
+    color: rgb(14, 107, 138);
+    text-align: center;
+    font-size: 5vh;
+    border-bottom: 2vh solid rgb(56, 187, 231);
+}
+.steps{
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ph img{
+    height: 15vh;
+}
+.text h2{
+    font-size: 4vh;
+    color:rgb(22, 170, 220);
+    text-align: center;
+}
+.text p{
+    font-size: 3vh;
+    text-align: center;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0;
+}
+button{
+    width: 30vw;
+    height: 10vh;
+    border-radius: 30px;
+    background-color: rgb(56, 187, 231);
+}
+button a{
+    color: white;
+    font-size: 3vh;
+    text-decoration: none;
+}
+button a:hover{
+    font-weight: bolder;
+}
+footer {
+    /* background-color: rgb(20, 19, 19); */
+    background-image: linear-gradient(45deg,black,grey);
+    color: white;
+    height: 20vh;
+    text-align: center;
+}

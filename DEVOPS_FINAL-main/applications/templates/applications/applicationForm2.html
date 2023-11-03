@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="{% static '/css/applicationForm.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static '/images/bms.png' %}" alt="bmslogo">
+            </div>
+            <div class="headings">
+                <div class="name">
+                    <h1>BMS College of Engineering</h1>
+                    <p>Bull Temple Rd, Basavanagudi, Bengaluru, Karnataka 560019</p>
+                </div>
+                <div class="options">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="https://bmsce.ac.in/home/About-BMSCE">About Us</a></li>
+                        <li><a href=https://bmsce.ac.in/home/Under-Graduation>Admissions</a></li>
+                        <li><a href="https://bmsce.ac.in/home/Contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="profile">
+        <div class="box1">
+            <h3 class="textcentre">Steps to complete your Application</h3>
+            <ul>
+                <li>
+                    <ul>
+                        Application form
+                        <li>Personal details </li>
+                        <li> Educational details</li>
+                        <li>Financial details</li>
+                    </ul>
+                </li>
+                <li>Upload Documents</li>
+                <li class="hover"><a class="textnodeco " href="edit.html">Edit Application form</a></li>
+                <li class="hover" class="textnodeco " onclick=myfunc()>LOGOUT</li>
+            </ul>
+        </div>
+        <div class="headin">
+            <h1>Application for BMSCE ENTRANCE EXAM 2022</h1>
+        </div>
+    </div>
+    
+<form action="{% url 'educational_form_page' %}" id="personal" method="post">
+    {% csrf_token %}  
+    <div class="personal">
+        <h2>Educational details</h2>
+        <h3>10<sup>th</sup> Details</h3>
+
+        <label for="">10<sup>th</sup>school:
+            <input type="text" name="school10"  class="addr1" placeholder="Enter your school name" required>
+        </label>
+        <div>
+            <label for="board">School Board:</label>
+            <select name="board" id="board" class="edu" required>
+                <option value="0">select</option>
+                <option value="CBSE">cbse</option>
+                <option value="ICSE">Icse</option>
+                <option value="STATE">State</option>
+                <option value="OTHERS">others</option>
+            </select>
+            <label for="">
+                10<sup>th</sup> Roll no:
+                <input type="number" id="r.no" name="rollno10th" required class="edu">
+            </label>
+            <label for="">
+                10<sup>th</sup> percentage:
+                <input type="number" id="marks" name="percent10" required min="0" max="100" class="edu">
+            </label><br>
+        </div>
+        <h3>12<sup>th</sup> Details</h3>
+        <label for="">12<sup>th</sup>school:
+            <input type="text" name="clgName"  class="addr1" placeholder="Enter your College name" required><br>
+        </label>
+        <label for="board">Board:
+            <input type="text" name="clgBoard" id="board2" class="addr1" required>
+        </label>
+        <div>
+            <label for="">
+                12<sup>th</sup> Roll no:
+                <input type="number" id="r.no" name="rollno12th" required class="edu" required>
+            </label>
+            <label for="">
+                12<sup>th</sup> percentage:
+                <input type="number" id="marks" name="percent12" required min="0" max="100" class="edu" required>
+            </label><br>
+        </div>
+        <label for="">Your Email id:
+            <input type="email" name="email" id="email" class="addr1" required>
+        </label>
+
+    </div>
+    <div class="personal">
+        <h2>Financial Details</h2>
+        <label for="income">
+            Total Annual Income:
+            <select name="income" id="income" class="addr2">
+                <option value="0">select</option>
+                <option value="Less than 1 lakh">Less than 1 lakh</option>
+                <option value="Less than 2.5 lakhs">Less than 2.5 lakhs</option>
+                <option value="Less than 10 lakhs">Less than 10 lakhs</option>
+                <option value="Greater than 10 lakhs">Greater than 10 lakhs</option>
+            </select>
+        </label>
+        
+    </div>
+    <div class="save">
+        <button class="hover" type="submit" >SAVE AND NEXT</button>
+    </div>
+</form>
+    <footer>
+        <div>
+            <div class="cu" id="footer">
+                <h2>Contact us</h2>
+                <h1>+91-80-26622130-35</h1>
+            </div>
+            <div class="email">
+                <h2>Email:<a href="mailto:info@bmsce.ac.in">info@bmsce.ac.in</a></h2>
+            </div>
+            <h2>Coprights &copy;2022 Bms college of Engineering.All rights reserved</h2>
+        </div>
+    </footer>
+    <script>
+        function myfunc() {
+
+            if (confirm("Are you sure you want to logout? Changes you made won't be saved")) {
+                window.location.href = "{% url 'logout_page' %}" ;
+            }
+            else {
+                alert("Logout denied by user")
+            }}
+        function save(){
+            if (confirm("You want to save the form as draft")){
+                 window.location.href="upload.html";
+            }
+            else{
+                alert("save denied")
+            }
+        }
+        function savenext(){
+            if (confirm("You want to save the form")){
+                 window.location.href="upload.html";
+            }
+            else{
+                alert("save denied");
+                window.location.href="application.html";
+            }
+        }
+        function validate(){
+            alert("please input the values correctly in the fields");
+        }
+        
+    </script>
+</body>
+
+</html>

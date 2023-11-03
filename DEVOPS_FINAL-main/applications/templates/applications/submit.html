@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="{% static '/css/submit.css' %}"   class="css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static '/images/bms.png' %}" alt="bmslogo">
+            </div>
+            <div class="headings">
+                <div class="name">
+                    <h1>BMS College of Engineering</h1>
+                    <p>Bull Temple Rd, Basavanagudi, Bengaluru, Karnataka 560019</p>
+                </div>
+                <div class="options">
+                    <ul>
+                        <li><a href="index1.html">Home</a></li>
+                        <li><a href="https://bmsce.ac.in/home/About-BMSCE">About Us</a></li>
+                        <li><a href=https://bmsce.ac.in/home/Under-Graduation>Admissions</a></li>
+                        <li><a href="https://bmsce.ac.in/home/Contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="post">
+
+        <div class="text">
+            <p> You have submitted the Application. Your Application approval will be sent via email.
+                You can update any details till THE LAST DATE OF APPLICATION!!</p> 
+                <p>FURTHER CHANGES ARE NOT ALLOWED.</p>
+            </div>
+            <div class="logout">
+                <button id="logout" type="submit" onclick=myfunc()><a class="textnodeco hover" href="{% url 'logout_page' %}"  ></a>Logout</button>
+                <button id="logout" onclick=myfunc2()><a class="textnodeco hover" href="{% url 'download_pdf' %}"  ></a>Download pdf</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div class="cu" id="footer">
+                <h2>Contact us</h2>
+                <h1>+91-80-26622130-35</h1>
+        </div>
+        <div class="email">
+            <h2>Email:<a href="mailto:info@bmsce.ac.in">info@bmsce.ac.in</a></h2>    
+        </div>
+        <h2>Coprights &copy;2022 Bms college of Engineering.All rights reserved</h2>
+    </div>
+    </footer>
+    <script>
+      function  myfunc(){
+            
+            if (confirm("Are you sure you want to exit!!")){
+                window.location.href="{% url 'logout_page' %}";
+            }
+            else{
+                alert("Logout denied by user")
+            }
+        }
+        function  myfunc2(){
+            window.location.href="{% url 'download_pdf' %}"; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+<title>Login & Registration form </title>
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+</head>
+<body>
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="Login()">Log In</button>
+            <button type="button" class="toggle-btn"onclick="Register()">Register</button>
+        </div>
+        <div class="social-icons">
+            <img src="{% static '/images/loginlogo.png' %}">
+
+        </div>
+        <form id="Login" method="post" class="input-group" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="email" id="user" class="input-field" placeholder="User Email ID" name="email" required>
+            <input type="password" class="input-field" placeholder="Enter  Password" name="pwd" required>
+            <!-- <input type="checkbox" class="chech-box"><span> Remember Password</span> -->
+            <button type="submit" class="submit-btn" >Login</button>
+        </form>
+        <form id="Register" method="post" class="input-group" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input type="text" class="input-field" placeholder="Enter your Name" name="name" required>
+            <!-- <input type="int" class="input-field" placeholder="Mobile Number" required> -->
+            <input type="email" class="input-field" placeholder="Email ID" name="email" required>
+            <input type="password" class="input-field" placeholder="Enter  Password" name="pwd1" required>
+            <input type="password" class="input-field" placeholder="Confirm  Password" name="pwd2" required>
+            <input type="checkbox" class="chech-box" required><span> I agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+   </div>
+   <script>
+    var x = document.getElementById("Login");
+    var y = document.getElementById("Register"); 
+    var z = document.getElementById("btn");
+    function Register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+    function Login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+    }  
+   </script>  
+
+</body>
+</html> 
